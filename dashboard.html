@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Hệ thống quản lý chất lượng không khí huyện Đồng Hỷ </title>
+    <title>Dashboard - Hệ thống quản lý chất lượng không khí Huyện Đồng Hỷ</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới tệp CSS -->
-    <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Liên kết tới Chart.js -->
+    <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript của bạn -->
 </head>
 <body>
     <header>
@@ -14,9 +15,15 @@
 
     <div>
         <h2>Chỉ số AQI hiện tại</h2>
-        <p id="aqi-value">Đang tải chỉ số AQI...</p>  <!-- Nơi hiển thị AQI -->
-        <p id="pm25-value">Đang tải PM2.5...</p>  <!-- Nơi hiển thị PM2.5 -->
-        <p id="co2-value">Đang tải CO2...</p>  <!-- Nơi hiển thị CO2 -->
+        <p id="aqi-value">Đang tải chỉ số AQI...</p>
+        <p id="pm25-value">Đang tải PM2.5...</p>
+        <p id="co2-value">Đang tải CO2...</p>
+    </div>
+
+    <!-- Thêm canvas để hiển thị biểu đồ -->
+    <div>
+        <h2>Biểu đồ chất lượng không khí</h2>
+        <canvas id="airQualityChart" width="400" height="200"></canvas>
     </div>
 
     <a href="index.html">Quay lại Trang chủ</a>
