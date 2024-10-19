@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ - Hệ thống quản lý chất lượng không khí Huyện Đồng Hỷ </title>
+    <title>Trang chủ - Hệ thống quản lý chất lượng không khi Huyện Đồng Hỷ</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới tệp CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Liên kết tới Chart.js -->
     <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript -->
 </head>
 <body>
@@ -17,7 +18,8 @@
             <li><a href="login.html">Đăng nhập</a></li>
             <li><a href="register.html">Đăng ký</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="article.html">Phân tích</a></li> <!-- Liên kết tới bài viết phân tích -->
+            <li><a href="admin.html">Trang quản trị viên</a></li> <!-- Liên kết đến trang quản trị -->
+            <li><a href="article.html">Bài viết phân tích</a></li> <!-- Liên kết đến bài viết phân tích -->
         </ul>
     </nav>
 
@@ -26,6 +28,21 @@
         <p id="aqi-value">Đang tải chỉ số AQI...</p>  <!-- Nơi hiển thị AQI -->
         <p id="pm25-value">Đang tải PM2.5...</p>  <!-- Nơi hiển thị PM2.5 -->
         <p id="co2-value">Đang tải CO2...</p>  <!-- Nơi hiển thị CO2 -->
+    </div>
+
+    <!-- Biểu đồ hiển thị AQI, PM2.5, và CO2 -->
+    <div>
+        <h2>Biểu đồ chất lượng không khí</h2>
+        <canvas id="airQualityChart" width="400" height="200"></canvas> <!-- Canvas cho biểu đồ -->
+    </div>
+
+    <!-- Popup cảnh báo -->
+    <div id="warning-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Cảnh báo chất lượng không khí!</h2>
+            <p id="warning-message">Chỉ số AQI đã vượt quá ngưỡng an toàn.</p>
+        </div>
     </div>
 
     <footer>
