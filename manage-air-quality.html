@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý chất lượng không khí</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới CSS -->
+    <script src="js/manage-air-quality.js" defer></script> <!-- Liên kết tới JavaScript -->
+</head>
+<body>
+    <header>
+        <h1>Quản lý chất lượng không khí</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="admin-index.html">Trang quản trị</a></li>
+            <li><a href="manage-users.html">Quản lý người dùng</a></li>
+            <li><a href="manage-posts.html">Quản lý bài viết</a></li>
+            <li><a href="logout.html">Đăng xuất</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Chỉ số chất lượng không khí</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>AQI</th>
+                    <th>PM2.5</th>
+                    <th>CO2</th>
+                    <th>Thời gian</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="air-quality-list">
+                <!-- Danh sách chỉ số không khí sẽ được điền bởi JavaScript -->
+            </tbody>
+        </table>
+        <button id="add-air-quality-btn">Thêm chỉ số không khí</button> <!-- Nút thêm chỉ số -->
+
+        <!-- Form thêm chỉ số mới -->
+        <div id="add-air-quality-form" style="display: none;">
+            <h3>Thêm chỉ số không khí mới</h3>
+            <form id="airQualityForm">
+                <input type="number" id="aqi" placeholder="Chỉ số AQI" required>
+                <input type="number" step="0.1" id="pm25" placeholder="PM2.5" required>
+                <input type="number" id="co2" placeholder="CO2" required>
+                <input type="datetime-local" id="timestamp" required>
+                <input type="submit" value="Thêm chỉ số">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Hệ thống quản lý chất lượng không khí © 2024</p>
+    </footer>
+</body>
+</html>
