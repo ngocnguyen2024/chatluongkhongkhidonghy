@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Hệ thống quản lý chất lượng không khí Huyện Đồng Hỷ</title>
+    <title>Dashboard - Hệ thống quản lý chất lượng không khí huyện Đồng Hỷ </title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới tệp CSS -->
+    <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript -->
 </head>
 <body>
     <header>
-        <h1>Dashboard - Quản lý chất lượng không khí</h1>
+        <h1>Dashboard - Hệ thống quản lý chất lượng không khí</h1>
     </header>
 
-    <p>Chào mừng bạn đến với hệ thống quản lý chất lượng không khí!</p>
-    
+    <div>
+        <h2>Chỉ số AQI hiện tại</h2>
+        <p id="aqi-value">Đang tải chỉ số AQI...</p>  <!-- Nơi hiển thị AQI -->
+        <p id="pm25-value">Đang tải PM2.5...</p>  <!-- Nơi hiển thị PM2.5 -->
+        <p id="co2-value">Đang tải CO2...</p>  <!-- Nơi hiển thị CO2 -->
+    </div>
+
     <a href="index.html">Quay lại Trang chủ</a>
 
     <footer>
