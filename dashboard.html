@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Hệ thống quản lý CLKK</title>
+    <title>Dashboard - Hệ thống quản lý chất lượng không khí Huyện Đồng Hỷ</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới tệp CSS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Liên kết tới Chart.js -->
     <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript -->
@@ -13,20 +13,25 @@
         <h1>Dashboard - Hệ thống quản lý chất lượng không khí</h1>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="admin.html">Trang quản trị viên</a></li> <!-- Liên kết đến trang quản trị -->
+        </ul>
+    </nav>
+
     <div>
-        <h2>Chỉ số AQI hiện tại</h2>
-        <p id="aqi-value">Đang tải chỉ số AQI...</p>
-        <p id="pm25-value">Đang tải PM2.5...</p>
-        <p id="co2-value">Đang tải CO2...</p>
+        <h2>Chỉ số chất lượng không khí (AQI) tại Thái Nguyên</h2>
+        <p id="aqi-value">Đang tải chỉ số AQI...</p>  <!-- Nơi hiển thị AQI -->
+        <p id="pm25-value">Đang tải PM2.5...</p>  <!-- Nơi hiển thị PM2.5 -->
+        <p id="co2-value">Đang tải CO2...</p>  <!-- Nơi hiển thị CO2 -->
     </div>
 
     <!-- Biểu đồ hiển thị AQI, PM2.5, và CO2 -->
     <div>
         <h2>Biểu đồ chất lượng không khí</h2>
-        <canvas id="airQualityChart" width="400" height="200"></canvas>
+        <canvas id="airQualityChart" width="400" height="200"></canvas> <!-- Canvas cho biểu đồ -->
     </div>
-
-    <a href="index.html">Quay lại Trang chủ</a>
 
     <!-- Popup cảnh báo -->
     <div id="warning-popup" class="popup" style="display: none;">
