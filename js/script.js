@@ -19,6 +19,9 @@ function fetchAQI() {
                 document.getElementById("pm25-value").textContent = `PM2.5: ${pm25}`;
                 document.getElementById("co2-value").textContent = `CO2: ${co2}`;
 
+                // Gọi hàm để tạo biểu đồ
+                createAirQualityChart(aqi, pm25, co2);
+
                 // Kiểm tra nếu AQI vượt ngưỡng an toàn và hiển thị popup cảnh báo
                 if (aqi > 100) {
                     document.getElementById("warning-message").textContent = `Cảnh báo! Chỉ số AQI hiện tại là ${aqi}, vượt ngưỡng an toàn. Hạn chế ra ngoài và đeo khẩu trang.`;
@@ -33,6 +36,39 @@ function fetchAQI() {
             console.error("Lỗi kết nối tới API", error);
             document.getElementById("aqi-value").textContent = "Lỗi kết nối";
         });
+}
+
+// Hàm tạo biểu đồ chất lượng không khí với dữ liệu lấy từ API
+function createAirQualityChart(aqi, pm25, co2) {
+    const ctx = document.getElementById('airQualityChart').getContext('2d');
+    const airQualityChart = new Chart(ctx, {
+        type: 'bar',  // Kiểu biểu đồ: bar (cột)
+        data: {
+            labels: ['AQI', 'PM2.5', 'CO2'],  // Các nhãn (labels) trên trục X
+            datasets: [{
+                label: 'Chỉ số chất lượng không khí',
+                data: [aqi, pm25, co2],  // Dữ liệu hiển thị
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',  // Màu nền cho AQI
+                    'rgba(54, 162, 235, 0.2)',  // Màu nền cho PM2.5
+                    'rgba(75, 192, 192, 0.2)'   // Màu nền cho CO2
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',  // Viền cho AQI
+                    'rgba(54, 162, 235, 1)',  // Viền cho PM2.5
+                    'rgba(75, 192, 192, 1)'   // Viền cho CO2
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true  // Trục Y bắt đầu từ 0
+                }
+            }
+        }
+    });
 }
 
 // Hàm hiển thị popup cảnh báo
