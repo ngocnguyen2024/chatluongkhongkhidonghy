@@ -1,65 +1,47 @@
-/* Định dạng chung */
+/* Đặt nền cho toàn bộ trang */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-image: url('https://cms.thainguyen.vn/documents/445171/10213052/anh+bia+du+lich.jpg/9926352a-f368-48f6-b958-7f9618fdd51b?t=1674098401705'); /* Liên kết đến ảnh nền */
+    background-size: cover; /* Ảnh nền bao phủ toàn bộ trang */
+    background-position: center; /* Căn giữa ảnh nền */
+    background-attachment: fixed; /* Ảnh nền cố định khi cuộn trang */
+    color: #fff; /* Đặt màu chữ là trắng để dễ đọc trên nền */
 }
 
+/* Định dạng phần header */
 header {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 h1 {
     margin: 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.form-box {
-    max-width: 400px;
-    margin: 50px auto;
+/* Định dạng phần hiển thị AQI */
+div {
+    background-color: rgba(0, 0, 0, 0.7); /* Nền đen mờ để dễ đọc văn bản */
     padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px; /* Giới hạn độ rộng của nội dung */
+    text-align: center;
+    border-radius: 10px; /* Bo tròn góc */
 }
 
-label, input {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+/* Định dạng các đoạn văn bản */
+p {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-input[type="submit"] {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
+/* Định dạng footer */
 footer {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
     color: white;
     text-align: center;
     padding: 10px;
