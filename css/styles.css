@@ -3,118 +3,218 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://cms.thainguyen.vn/documents/445171/10213052/anh+bia+du+lich.jpg/9926352a-f368-48f6-b958-7f9618fdd51b?t=1674098401705'); /* Đặt ảnh nền */
-    background-size: cover; /* Ảnh nền bao phủ toàn bộ trang */
-    background-position: center; /* Căn giữa ảnh nền */
-    background-attachment: fixed; /* Ảnh nền cố định khi cuộn */
-    color: #fff; /* Đặt màu chữ là trắng để dễ đọc trên nền */
+    background-color: #f4f4f4; /* Màu nền trang */
 }
 
-/* Định dạng phần header */
+/* Định dạng chung cho tiêu đề và văn bản */
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+/* Định dạng header */
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Nền đen mờ */
+    background-color: #4CAF50;
     color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
 }
 
-h1 {
+header h1 {
     margin: 0;
+    font-size: 2em;
 }
 
-/* Định dạng menu điều hướng */
+/* Định dạng menu điều hướng (navbar) */
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Nền đen cho menu */
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
 }
 
 nav ul li a {
-    text-decoration: none;
+    display: block;
     color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Hiệu ứng hover */
+    background-color: #111;
 }
 
-/* Định dạng phần hiển thị AQI */
-div {
-    background-color: rgba(0, 0, 0, 0.7); /* Nền đen mờ để dễ đọc văn bản */
+/* Định dạng phần bảng điều khiển admin */
+.admin-dashboard {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.dashboard-item {
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    margin: 20px auto;
-    max-width: 600px; /* Giới hạn độ rộng của nội dung */
+    border-radius: 10px;
+    width: 30%;
     text-align: center;
-    border-radius: 10px; /* Bo tròn góc */
+    color: white;
 }
 
-/* Định dạng các đoạn văn bản */
-p {
+.dashboard-item h3 {
+    margin-bottom: 10px;
+}
+
+.dashboard-item p {
     font-size: 18px;
     margin: 10px 0;
 }
 
-/* Định dạng biểu đồ */
-canvas {
-    max-width: 100%;
-    margin: 20px auto;
-    display: block;
+.btn {
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-/* Popup cảnh báo */
-.popup {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Nền đen mờ */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn:hover {
+    background-color: #45a049;
 }
 
-/* Nội dung của popup */
-.popup-content {
-    background-color: #fff;
+/* Định dạng section chính */
+section {
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho bảng (nếu có) */
+table {
     width: 100%;
-    position: relative;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-/* Nút đóng popup */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #333;
+table, th, td {
+    border: 1px solid #ddd;
 }
 
-/* Định dạng footer */
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Định dạng nút điều hướng */
+nav ul li a, .btn {
+    transition: background-color 0.3s;
+}
+
+/* Định dạng cho footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Popup cảnh báo (cho trang quản lý nếu cần cảnh báo) */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Định dạng form đăng nhập/đăng ký */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+    .admin-dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
 }
