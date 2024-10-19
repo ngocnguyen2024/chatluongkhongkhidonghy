@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý bài viết phân tích</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới CSS -->
+    <script src="js/manage-posts.js" defer></script> <!-- Liên kết tới JavaScript -->
+</head>
+<body>
+    <header>
+        <h1>Quản lý bài viết phân tích</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="admin-index.html">Trang quản trị</a></li>
+            <li><a href="manage-users.html">Quản lý người dùng</a></li>
+            <li><a href="manage-air-quality.html">Quản lý chất lượng không khí</a></li>
+            <li><a href="logout.html">Đăng xuất</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Danh sách bài viết</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tiêu đề</th>
+                    <th>Tác giả</th>
+                    <th>Ngày đăng</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="post-list">
+                <!-- Danh sách bài viết sẽ được điền bởi JavaScript -->
+            </tbody>
+        </table>
+        <button id="add-post-btn">Thêm bài viết</button> <!-- Nút thêm bài viết -->
+
+        <!-- Form thêm bài viết mới -->
+        <div id="add-post-form" style="display: none;">
+            <h3>Thêm bài viết mới</h3>
+            <form id="postForm">
+                <input type="text" id="title" placeholder="Tiêu đề bài viết" required>
+                <textarea id="content" placeholder="Nội dung bài viết" required></textarea>
+                <input type="submit" value="Thêm bài viết">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Hệ thống quản lý chất lượng không khí © 2024</p>
+    </footer>
+</body>
+</html>
