@@ -3,16 +3,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://cms.thainguyen.vn/documents/445171/10213052/anh+bia+du+lich.jpg/9926352a-f368-48f6-b958-7f9618fdd51b?t=1674098401705'); /* Liên kết đến ảnh nền */
+    background-image: url('https://cms.thainguyen.vn/documents/445171/10213052/anh+bia+du+lich.jpg/9926352a-f368-48f6-b958-7f9618fdd51b?t=1674098401705'); /* Đặt ảnh nền */
     background-size: cover; /* Ảnh nền bao phủ toàn bộ trang */
     background-position: center; /* Căn giữa ảnh nền */
-    background-attachment: fixed; /* Ảnh nền cố định khi cuộn trang */
+    background-attachment: fixed; /* Ảnh nền cố định khi cuộn */
     color: #fff; /* Đặt màu chữ là trắng để dễ đọc trên nền */
 }
 
 /* Định dạng phần header */
 header {
-    background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
+    background-color: rgba(0, 0, 0, 0.7); /* Nền đen mờ */
     color: white;
     text-align: center;
     padding: 20px;
@@ -23,7 +23,7 @@ h1 {
     margin: 0;
 }
 
-/* Định dạng cho menu điều hướng */
+/* Định dạng menu điều hướng */
 nav ul {
     list-style: none;
     padding: 0;
@@ -66,22 +66,11 @@ p {
     margin: 10px 0;
 }
 
-/* Định dạng cho bài viết phân tích */
-article {
-    background-color: rgba(255, 255, 255, 0.9); /* Nền trắng mờ */
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 700px;
+/* Định dạng biểu đồ */
+canvas {
+    max-width: 100%;
     margin: 20px auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Định dạng cho phần tiêu đề của bài viết */
-article h2 {
-    margin-top: 0;
-    color: #222;
-    text-align: left;
+    display: block;
 }
 
 /* Popup cảnh báo */
@@ -128,11 +117,4 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-/* Định dạng cho canvas của biểu đồ */
-canvas {
-    max-width: 100%;
-    margin: 20px auto;
-    display: block;
 }
