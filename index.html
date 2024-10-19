@@ -3,50 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ - Hệ thống quản lý chất lượng không khí Huyện Đồng Hỷ</title>
+    <title>Hệ thống quản lý chất lượng không khí - Huyện Đồng Hỷ</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới tệp CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Liên kết tới Chart.js -->
     <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript -->
 </head>
 <body>
     <header>
-        <h1>Hệ thống quản lý chất lượng không khí (CLKK)</h1>
+        <h1>Hệ thống quản lý chất lượng không khí - Huyện Đồng Hỷ</h1>
+        <p>Theo dõi và quản lý chất lượng không khí tại Thái Nguyên</p>
     </header>
 
     <nav>
         <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="admin-index.html">Quản trị viên</a></li>
+            <li><a href="manage-users.html">Quản lý người dùng</a></li>
+            <li><a href="manage-posts.html">Quản lý bài viết</a></li>
+            <li><a href="manage-air-quality.html">Quản lý chất lượng không khí</a></li>
             <li><a href="login.html">Đăng nhập</a></li>
             <li><a href="register.html">Đăng ký</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="admin_index.html">Trang quản trị viên</a></li> <!-- Liên kết đến trang quản trị -->
-            <li><a href="article.html">Bài viết phân tích</a></li> <!-- Liên kết đến bài viết phân tích -->
         </ul>
     </nav>
 
-    <div>
-        <h2>Chỉ số chất lượng không khí (AQI) tại Huyện Đồng Hỷ</h2>
-        <p id="aqi-value">Đang tải chỉ số AQI...</p>  <!-- Nơi hiển thị AQI -->
-        <p id="pm25-value">Đang tải PM2.5...</p>  <!-- Nơi hiển thị PM2.5 -->
-        <p id="co2-value">Đang tải CO2...</p>  <!-- Nơi hiển thị CO2 -->
-    </div>
+    <section>
+        <h2>Chào mừng bạn đến với hệ thống quản lý chất lượng không khí</h2>
+        <p>Hệ thống cung cấp dữ liệu về chất lượng không khí theo thời gian thực và cho phép người dùng theo dõi, phân tích và quản lý các thông tin liên quan đến chất lượng không khí tại huyện Đồng Hỷ, Thái Nguyên.</p>
 
-    <!-- Biểu đồ hiển thị AQI, PM2.5, và CO2 -->
-    <div>
-        <h2>Biểu đồ chất lượng không khí</h2>
-        <canvas id="airQualityChart" width="400" height="200"></canvas> <!-- Canvas cho biểu đồ -->
-    </div>
-
-    <!-- Popup cảnh báo -->
-    <div id="warning-popup" class="popup" style="display: none;">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>Cảnh báo chất lượng không khí!</h2>
-            <p id="warning-message">Chỉ số AQI đã vượt quá ngưỡng an toàn.</p>
+        <div class="section-overview">
+            <div class="overview-item">
+                <h3>Chỉ số chất lượng không khí</h3>
+                <p>Chỉ số AQI hiện tại: <span id="current-aqi">Đang tải...</span></p> <!-- Số liệu sẽ được cập nhật qua JS -->
+                <a href="manage-air-quality.html" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="overview-item">
+                <h3>Bài viết phân tích</h3>
+                <p>Phân tích chuyên sâu về ô nhiễm không khí và các biện pháp giảm thiểu.</p>
+                <a href="manage-posts.html" class="btn">Xem bài viết</a>
+            </div>
+            <div class="overview-item">
+                <h3>Quản lý người dùng</h3>
+                <p>Quản lý tài khoản người dùng và vai trò của họ trên hệ thống.</p>
+                <a href="manage-users.html" class="btn">Quản lý người dùng</a>
+            </div>
         </div>
-    </div>
+    </section>
 
     <footer>
-        <p>Hệ thống quản lý chất lượng không khí © 2024</p>
+        <p>Hệ thống quản lý chất lượng không khí © 2024 - Thực hiện bởi nhóm phát triển</p>
     </footer>
 </body>
 </html>
