@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Hệ thống quản lý chất lượng không khí Huyện Đồng Hỷ</title>
+    <title>Dashboard - Hệ thống quản lý CLKK</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết tới tệp CSS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Liên kết tới Chart.js -->
-    <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript của bạn -->
+    <script src="js/script.js" defer></script> <!-- Liên kết tới tệp JavaScript -->
 </head>
 <body>
     <header>
@@ -20,13 +20,22 @@
         <p id="co2-value">Đang tải CO2...</p>
     </div>
 
-    <!-- Thêm canvas để hiển thị biểu đồ -->
+    <!-- Biểu đồ hiển thị AQI, PM2.5, và CO2 -->
     <div>
         <h2>Biểu đồ chất lượng không khí</h2>
         <canvas id="airQualityChart" width="400" height="200"></canvas>
     </div>
 
     <a href="index.html">Quay lại Trang chủ</a>
+
+    <!-- Popup cảnh báo -->
+    <div id="warning-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Cảnh báo chất lượng không khí!</h2>
+            <p id="warning-message">Chỉ số AQI đã vượt quá ngưỡng an toàn.</p>
+        </div>
+    </div>
 
     <footer>
         <p>Hệ thống quản lý chất lượng không khí © 2024</p>
